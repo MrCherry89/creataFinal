@@ -1,0 +1,749 @@
+$pink: #e31c93;
+$blue: #00b3f2;
+
+body,
+html {
+  overflow-x: hidden;
+  font-family: "Visby CF";
+  &.overflow {
+    overflow: hidden !important;
+  }
+}
+
+body {
+  @include flex;
+  @include dir-col;
+  @include justify-between;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Visby CF";
+}
+
+input,
+textarea {
+  border: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+button {
+  cursor: pointer; 
+  border: none;
+  transition: 0.3s;
+  background: none;
+  &:focus {
+    outline: none;
+    border: none;
+  }
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.3s;
+  display: inline-block;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.wrapper {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer {
+  padding: 45px 0;
+  background: #1c1c1c;
+  @media (max-width: 1024px) {
+    padding: 30px 0;
+  }
+  .footer-top {
+    @include flex;
+    @include justify-between;
+    @include align-center;
+    @media (max-width: 767px) {
+      flex-direction: column-reverse;
+    }
+    .footer-logo {
+      @include flex;
+      @media (max-width: 1024px) {
+        width: 100px;
+        min-width: 100px;
+        img {
+          width: 100%;
+        }
+      }
+      @media (max-width: 767px) {
+        margin: 15px auto 0;
+      }
+    }
+    .footer-menu-wrap {
+      @include flex;
+      @media (max-width: 767px) {
+        display: grid;
+        gap: 30px;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+      }
+      .item {
+        @include flex;
+        @include dir-col;
+        margin-left: 150px;
+        min-width: 290px;
+        @media (max-width: 1200px) {
+          margin-left: 50px;
+        }
+        @media (max-width: 1024px) {
+          min-width: 240px;
+        }
+        @media (max-width: 767px) {
+          min-width: auto;
+          margin: 0;
+        }
+        h3 {
+          margin-bottom: 20px;
+          color: #fff;
+          font-size: 40px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 120%;
+          text-transform: uppercase;
+          @media (max-width: 1200px) {
+            font-size: 34px;
+          }
+          @media (max-width: 1024px) {
+            font-size: 30px;
+          }
+          @media (max-width: 767px) {
+            font-size: 20px;
+          }
+        }
+        a,
+        .address {
+          margin-bottom: 15px;
+          color: #fff;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 120%;
+          display: block;
+          @media (max-width: 1200px) {
+            font-size: 18px;
+          }
+          @media (max-width: 1024px) {
+            font-size: 16px;
+          }
+        }
+        a:hover {
+          color: $pink;
+        }
+      }
+    }
+  }
+  .animation-text {
+    margin: 40px auto;
+    text-align: center;
+    @media (max-width: 767px) {
+      margin: 30px auto;
+    }
+    span {
+      color: #fff;
+      text-align: center;
+      font-family: "HeliosExt";
+      font-size: 270px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 110%;
+      letter-spacing: 20px;
+      text-transform: uppercase;
+      @media (max-width: 1440px) {
+        font-size: 18vw;
+      }
+      @media (max-width: 1200px) {
+        font-size: 17vw;
+      }
+      @media (max-width: 1024px) {
+        font-size: 16vw;
+      }
+      @media (max-width: 767px) {
+        letter-spacing: 5px;
+        font-size: 15vw;
+      }
+    }
+  }
+  .bottom-info {
+    @include flex;
+    @include justify-between;
+    @media (max-width: 1024px) {
+      @include flex-wrap;
+    }
+    @media (max-width: 767px) {
+      @include dir-col;
+      @include justify-center;
+      @include align-center;
+    }
+    a,
+    p {
+      color: #fff;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 120%;
+      @media (max-width: 1200px) {
+        font-size: 16px;
+      }
+      @media (max-width: 1024px) {
+        font-size: 14px;
+      }
+    }
+    a {
+      @media (max-width: 1024px) {
+        margin-bottom: 15px;
+      }
+    }
+    p {
+      @media (max-width: 1024px) {
+        width: 100%;
+        order: 1;
+      }
+      @media (max-width: 767px) {
+        text-align: center;
+      }
+      br {
+        display: none;
+        @media (max-width: 1024px) {
+          display: inline-block;
+        }
+      }
+    }
+    a:hover {
+      color: $pink;
+    }
+  }
+}
+
+
+.in-touch {
+  padding: 150px 0 50px;
+  position: relative;
+  z-index: 0;
+  .img1 {
+    position: absolute;
+    left: 0px;
+    top: 46%;
+    z-index: -1;
+    transform: translateY(-50%);
+    @media (max-width: 1600px) {
+      display: none;
+    }
+  }
+  .img2 {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+    @media (max-width: 1600px) {
+      display: none;
+    }
+  }
+  @media (max-width: 1440px) {
+    padding: 120px 0;
+  }
+  @media (max-width: 1200px) {
+    padding-top: 40px;
+  }
+  @media (max-width: 767px) {
+    padding: 50px 0;
+  }
+  .wrapper {
+    position: relative;
+    z-index: 0;
+
+    .img3 {
+      position: absolute;
+      bottom: -50px;
+      left: 0;
+      z-index: -1;
+      @media (max-width: 1440px) {
+        display: none;
+      }
+    }
+    .img4 {
+      display: none;
+      @media (max-width: 1440px) {
+        display: inline-block;
+        margin-bottom: 50px;
+        align-self: flex-end;
+      }
+      @media (max-width: 1024px) {
+        display: none;
+      }
+    }
+    .img5 {
+      display: none;
+      @media (max-width: 1440px) {
+        display: inline-block;
+        position: absolute;
+        bottom: -50px;
+        left: 100px;
+      }
+      @media (max-width: 1200px) {
+        left: 20px;
+        bottom: 0px;
+      }
+      @media (max-width: 1024px) {
+        display: none;
+      }
+    }
+  }
+  svg {
+    fill: #e31c93;
+  }
+  .img6 {
+    display: none;
+    @media (max-width: 1024px) {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      right: 20px;
+    }
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+  .img7 {
+    display: none;
+    @media (max-width: 1024px) {
+      display: inline-block;
+      position: absolute;
+      top: 80px;
+      left: 20px;
+    }
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+  .img8 {
+    display: none;
+    @media (max-width: 767px) {
+      display: inline-block;
+      position: absolute;
+      top: -30px;
+      right: 20px;
+    }
+  }
+  .touch-title {
+    color: #1c1c1c;
+    font-size: 90px;
+    font-family: "HeliosExt";
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    margin-bottom: 40px;
+    @media (max-width: 1440px) {
+      line-height: 120%;
+      font-size: 70px;
+      margin-bottom: 30px;
+    }
+    @media (max-width: 1024px) {
+      font-size: 55px;
+    }
+    @media (max-width: 767px) {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+    span {
+      font-size: 90px;
+      font-family: "HeliosExt";
+      font-style: normal;
+      font-weight: 700;
+      line-height: 100%;
+      @media (max-width: 1440px) {
+        display: block;
+        line-height: 120%;
+        font-size: 70px;
+      }
+      @media (max-width: 1024px) {
+        text-align: right;
+        font-size: 55px;
+      }
+      @media (max-width: 767px) {
+        text-align: left;
+        font-size: 30px;
+      }
+      &.pink {
+        color: $pink;
+      }
+    }
+  }
+  .touch-form-wrap {
+    @include flex;
+    @include justify-between;
+    @media (max-width: 1024px) {
+      @include dir-col;
+    }
+    .info {
+      max-width: 620px;
+      width: 100%;
+      @media (max-width: 1440px) {
+        position: relative;
+        z-index: 0;
+      }
+      @media (max-width: 1200px) {
+        padding-right: 10px;
+        max-width: 100%;
+      }
+      h4 {
+        color: #1c1c1c;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%;
+        text-transform: uppercase;
+        margin-bottom: 25px;
+        @media (max-width: 1200px) {
+          font-size: 20px;
+          max-width: 520px;
+        }
+        @media (max-width: 767px) {
+          font-size: 16px;
+          margin-bottom: 20px;
+        }
+      }
+      P {
+        color: #1c1c1c;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%;
+        margin-bottom: 40px;
+        max-width: 600px;
+        @media (max-width: 1200px) {
+          font-size: 16px;
+          max-width: 400px;
+        }
+        @media (max-width: 767px) {
+          font-size: 16px;
+          margin-bottom: 20px;
+        }
+      }
+      a {
+        color: #1c1c1c;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 100%;
+        font-family: "HeliosExt";
+        @media (max-width: 1200px) {
+          font-size: 30px;
+        }
+        @media (max-width: 767px) {
+          font-size: 20px;
+        }
+        &:hover {
+          color: $pink;
+          &.blue{
+            color: #00b3f2;
+          }
+          &.blue2{
+            color: #1283DF;
+          }
+          &.green{
+            color: #004F32;
+          }
+          &.red{
+            color: #e4001e;
+          }
+          &.orange{
+            color: #F04D2A;
+          }
+          &.orange2{
+            color: #EE7103;
+          }
+          &.purple{
+            color: #5B0097;
+          }
+        }
+      }
+    }
+    .touch-form {
+      max-width: 500px;
+      width: 100%;
+      @include flex;
+      @include dir-col;
+      @media (max-width: 1440px) {
+        margin-top: -200px;
+      }
+      @media (max-width: 1024px) {
+        margin-top: 30px;
+        max-width: 100%;
+      }
+      @media (max-width: 767px) {
+        margin-top: 20px;
+      }
+      textarea {
+        resize: none;
+        height: 70px;
+        background: transparent;
+        width: 100%;
+        width: 100%;
+        border-bottom: 1px solid #1c1c1c;
+        margin-bottom: 25px;
+        padding: 10px;
+        padding-top: 0;
+        color: #1c1c1c;
+        font-size: 20px;
+        font-weight: 500;
+        @include placeholder {
+          color: #1c1c1c;
+          font-size: 20px;
+          font-weight: 500;
+        }
+      }
+      input {
+        border: none;
+        width: 100%;
+        border-bottom: 1px solid #1c1c1c;
+        margin-bottom: 25px;
+        padding: 10px;
+        padding-top: 0;
+        color: #1c1c1c;
+        font-size: 20px;
+        background: transparent;
+        font-weight: 700;
+        @include placeholder {
+          color: #1c1c1c;
+          font-size: 20px;
+          font-weight: 500;
+        }
+        @media (max-width: 767px) {
+          font-size: 16px;
+          @include placeholder {
+            font-size: 16px;
+          }
+        }
+      }
+      .send {
+        margin-bottom: 15px;
+      }
+      p {
+        color: #383838;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%;
+      }
+    }
+  }
+  &.blue-theme {
+    svg {
+      fill: $blue;
+    }
+    .send {
+      &:hover {
+        background: $blue;
+      }
+    }
+    .touch-title {
+      .pink {
+        color: $blue;
+      }
+    }
+  }
+  &.blue-theme2 {
+    svg {
+      fill: #1283DF;
+    }
+    .send {
+      &:hover {
+        background: #1283DF;
+      }
+    }
+    .touch-title {
+      .pink {
+        color: #1283DF;
+      }
+    }
+  }
+  &.red-theme {
+    svg {
+      fill: #e4001e;
+    }
+    .send {
+      &:hover {
+        background: #e4001e;
+      }
+    }
+    .touch-title {
+      .pink {
+        color: #e4001e;
+      }
+    }
+  }
+  &.orange-theme {
+    svg {
+      fill: #EE7103;
+    }
+    .send {
+      &:hover {
+        background: #EE7103;
+      }
+    }
+    .touch-title {
+      .pink {
+        color: #EE7103;
+      }
+    }
+  }
+  &.orange-theme2 {
+    svg {
+      fill: #F04D2A;
+    }
+    .send {
+      &:hover {
+        background: #F04D2A;
+      }
+    }
+    .touch-title {
+      .pink {
+        color: #F04D2A;
+      }
+    }
+  }
+  &.green-theme {
+    svg {
+      fill: #004F32;
+    }
+    .send {
+      &:hover {
+        background: #004F32;
+      }
+    }
+    .touch-title {
+      .pink {
+        color: #004F32;
+      }
+    }
+  }
+  &.purple-theme {
+    svg {
+      fill: #5B0097;
+    }
+    .send {
+      &:hover {
+        background: #5B0097;
+      }
+    }
+    .touch-title {
+      .pink {
+        color: #5B0097;
+      }
+    }
+  }
+}
+
+.black-btn {
+  @include flex;
+  @include align-center;
+  @include justify-center;
+  border-radius: 30px;
+  background: #1c1c1c;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  height: 60px;
+  &:hover {
+    background: $pink;
+  }
+}
+
+input.error {
+  border-color: #e50000 !important;
+}
+
+textarea.error {
+  border-color: #e50000 !important;
+}
+
+.drop-menu {
+  @include dir-col;
+  @include justify-center;
+  cursor: pointer;
+  display: none;
+
+  @media (max-width: 1024px) {
+    @include flex;
+  }
+
+  .line {
+    width: 30px;
+    height: 2px;
+    background-color: #1c1c1c;
+    display: block;
+    margin: 2px auto;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+.drop-menu.is-active .line:nth-child(3) {
+  opacity: 0;
+}
+
+.drop-menu.is-active .line:nth-child(1) {
+  -webkit-transform: translateY(7px) rotate(45deg);
+  -ms-transform: translateY(7px) rotate(45deg);
+  -o-transform: translateY(7px) rotate(45deg);
+  transform: translateY(7px) rotate(45deg);
+}
+
+.drop-menu.is-active .line:nth-child(2) {
+  -webkit-transform: translateY(1px) rotate(-45deg);
+  -ms-transform: translateY(1px) rotate(-45deg);
+  -o-transform: translateY(1px) rotate(-45deg);
+  transform: translateY(1px) rotate(-45deg);
+}
+
+
+.section__full {
+  width: 100%;
+  min-height: calc(100vh - 100px);
+  overflow: hidden;
+  @media (max-width: 1024px) {
+    min-height: calc(100vh - 86px);
+  }
+  @media (max-width: 767px) {
+    min-height: calc(100vh - 70px);
+  }
+}
